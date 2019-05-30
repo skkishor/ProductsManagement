@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="updatePrdDialog" title="Update Product" contentHeight="470px" contentWidth="650px" stretch="false" verticalScrolling="false"
+		resizable="true" draggable="true">
+		<customHeader>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Title text="Update Product"/>
+				<ToolbarSpacer/>
+				<Button tooltip="Close" icon="sap-icon://decline" press="closUpdateDialog" type="Transparent"/>
+			</OverflowToolbar>
+		</customHeader>
+		<MessageStrip text="Please update the required fields and click on 'Create' button." showIcon="true" showCloseButton="false"
+			class="sapUiTinyMargin"></MessageStrip>
+		<content>
+			<f:SimpleForm id="idUpdatePrdForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="5"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="3" emptySpanL="3" emptySpanM="3" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Product ID"/>
+					<Text id="idUPrdID" text=""/>
+					<Label text="Product Name"/>
+					<Input id="idUPrdName" value=""/>
+					<Label text="Product Type"/>
+					<Input id="idUPrdType" value=""/>
+					<Label text="In Stock Quantity"/>
+					<Input id="idUStockQty" value=""/>
+					<Label text="Product Status"/>
+					<Select id="idUPrdStatus">
+						<core:Item key="Active" text="Active"/>
+						<core:Item key="Blocked" text="Blocked"/>
+					</Select>
+					<Label text="Warehouse Transfer Status"/>
+					<Select id="idUWareTransStatus">
+						<core:Item key="Not Started" text="Not Started"/>
+						<core:Item key="In Progress" text="In Progress"/>
+						<core:Item key="Completed" text="Completed"/>
+					</Select>
+					<Label text="Packaging Status"/>
+					<Select id="idUPackStatus">
+						<core:Item key="Not Started" text="Not Started"/>
+						<core:Item key="In Progress" text="In Progress"/>
+						<core:Item key="Completed" text="Completed"/>
+					</Select>
+					<Label text="Created Date"/>
+					<Text id="idUCraeteDate" text=""/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<endButton>
+			<Button text="Update" class="whiteButton" icon="sap-icon://save" press="updateProduct" id="idOkUpdatePrd" type="Transparent"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
